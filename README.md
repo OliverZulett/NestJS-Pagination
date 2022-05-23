@@ -1,73 +1,86 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Paginación con Sequalize, nest-paginate y mongoose-paginate-v2 en NESTJS
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+REST API para crear paginación sobre respuestas GET en NESTJS con Sequalize, nestjs-pagination y mongoose-paginate-v2
 
-## Description
+## Comenzando 🚀
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-## Installation
 
-```bash
-$ npm install
+### Prerrequisitos 📋
+
+_Que cosas necesitas para instalar para que la API funcione:_
+
+1. NestJS > 8
+2. nodejs > 10
+3. docker & docker-compose
+
+### Ejecución 🔧
+
+_Para ejecutar la base de datos relacional_
+
+1. levanta la base de datos con docker-compose.
+```
+docker-compose up -d
 ```
 
-## Running the app
+2. accede a la base de datos desde un gestor de base de datos como [DBeaver](https://dbeaver.io)
+```
+host: localhost
+port: 9978
+usr: admin
+password: adminPassword123
+```
+_Para ejecutar la base de datos no relacional_
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+1. levanta la base de datos con docker-compose.
+```
+docker-compose up -d
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+2. accede a la base de datos desde un gestor de base de datos como [Studio 3T](https://robomongo.org)
+```
+host: localhost
+port: 27010
+usr: admin
+password: adminPassword123
 ```
 
-## Support
+_Para poder ejecutar la APP necesitas seguir los siguientes pasos_
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1. Abre una terminal desde la raíz del repositorio y ejecuta el siguiente comando para instalar todas las dependencias de Node que necesita la API para funcionar.
 
-## Stay in touch
+```
+npm install
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+2. Para ejecutar la API en modo desarrollo (se recompila automáticamente cuando haces algún cambio).
 
-## License
+```
+nest start -w
+```
 
-Nest is [MIT licensed](LICENSE).
+## Construido con 🛠️
+
+_herramientas que se utilizaron para crear este proyecto_
+
+* [NestJS](https://docs.nestjs.com) - El framework de nodejs.
+* [Nodejs](https://nodejs.org/es/) - Plataforma de ejecución.
+* [Typescript](https://www.typescriptlang.org/) - El lenguaje de programación.
+* [Sequelize](https://sequelize.org) - El ORM.
+* [TypeORM](https://typeorm.io/#/) - El ORM.
+* [Mongoose](https://mongoosejs.com) - El ORM.
+* [nestjs-paginate](https://www.npmjs.com/package/nestjs-paginate) - dependencia de paginación para Typeorm.
+* [mongoose-paginate-v2](https://github.com/aravindnc/mongoose-paginate-v2#readme) - dependencia de paginación para Mongoose.
+
+## Autores ✒️
+
+* **Oliver Zulett** - *Desarrollo* - [OliverZulett](https://github.com/OliverZulett)
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
